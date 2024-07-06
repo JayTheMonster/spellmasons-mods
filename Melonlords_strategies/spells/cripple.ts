@@ -60,13 +60,13 @@ function add(unit: IUnit, underworld: Underworld, prediction: boolean, quantity:
 
 const spell: Spell = {
   card: {
-    id: 'Cripple',
+    id: crippleCardId,
     category: CardCategory.Curses,
     supportQuantity: false,
     manaCost: 40,
     healthCost: 0,
     expenseScaling: 3,
-    probability: probabilityMap[CardRarity.UNCOMMON],
+    probability: probabilityMap[CardRarity.RARE],
     //thumbnail: 'spellmasons-mods/Melonlords_strategies/visuals/icons/spell'+ cardId +'.png',
     thumbnail: 'spellmasons-mods/Melonlords_strategies/visuals/icons/spellImmolate.png',
     description: ['Cripples a targeted unit.'],

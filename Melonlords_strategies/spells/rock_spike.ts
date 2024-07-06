@@ -1,5 +1,7 @@
 /// <reference path="../../globalTypes.d.ts" />
 import type { Spell } from '../../types/cards/index';
+import { crippleCardId } from './cripple';
+import { lesserSlowCardId } from './lesser_slow';
 
 const {
     PixiUtils,
@@ -67,19 +69,19 @@ const spell: Spell = {
                             fromVec2: state.casterUnit,
                         }, underworld, prediction);
                         // Apply modifiers - cripple or slow
-                        if (quantity >= 3 && q == 0) {
+                        if (quantity >= 5 && q == 0) {
                             Unit.addModifier(
                                 unit, 
-                                'Cripple',
+                                crippleCardId,
                                 underworld, 
                                 prediction,
                                 quantity);
                             FloatingText.default({ coords: unit, text: 'Crippled' });
                         }
-                        else if (quantity < 3) {
+                        else if (quantity < 5) {
                             Unit.addModifier(
                                 unit, 
-                                'slow',
+                                lesserSlowCardId,
                                 underworld, 
                                 prediction,
                                 quantity);
